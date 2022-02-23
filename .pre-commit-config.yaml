@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: generate-pre-commit-ci-config
+        name: Geneate pre-commit config for CI usage
+        language: script
+        entry: ./utils/generate_ci_config.py --config configs/pre-commit-ci-config.yaml --input output/pre-commit-config.yaml --output output/pre-commit-config-ci-generated.yaml
+        pass_filenames: false
+

@@ -1,0 +1,8 @@
+---
+root_args:
+  fail_fast: false
+repo_args:
+  "https://github.com/antonbabenko/pre-commit-terraform":
+    terraform_tflint:
+      args:
+        - "--args=-f json"
