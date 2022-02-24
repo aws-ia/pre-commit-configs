@@ -1,38 +1,21 @@
+import inspect
 from dataclasses import dataclass
 from dataclasses_jsonschema import JsonSchemaMixin
 from functools import wraps
 from typing import List
 
-# >>>
-# ... from foo import *
-# ... import json
-# ...
-# ... with open('/tmp/tflint-output.json') as f:
-# ...     tflr = json.load(f)
-# >>> RAW = RawData(commit_id='a1bc', success=False, raw_data=tflr)
-# >>>
-# >>> import pprint as pp
-# >>>
-# >>> pp.pprint(RAW.generate_output())
-# [{'conclusion': 'failure',
-#   'head_sha': 'a1bc',
-#   'name': 'TFN Linting',
-#   'output': {'annotations': [{'annotation_level': 'failure',
-#                               'details_url': 'https://github.com/terraform-linters/tflint/blob/v0.34.1/docs/rules/terraform_required_version.md',
-#                               'end_line': 0,
-#                               'message': 'terraform "required_version" '
-#                                          'attribute is required',
-#                               'start_line': 0,
-#                               'title': 'tflint: terraform_required_version'}],
-#              'summary': 'Errors occured while linting terraform files',
-#              'title': 'TFN Linting'},
-#   'status': 'completed',
-#   'summary': 'Errors occured while linting terraform files'}]
-# >>>
+
+def get_transform_modules(downstream):
+    modules = {}
+    for mn, m in inspect.getmembers(downstream, predicate=inspect.ismodule):
+        modules[f".{mn}"] = m
+    return modules
+
 
 def chunks(lst, n):
     for i in range(0, len(lst), n):
         yield lst[i:i + n]
+
 
 @dataclass
 class LintResult(JsonSchemaMixin):
@@ -76,12 +59,20 @@ def convert_annotation(func):
         return res
     return wrapper
 
+def generate_generic_error_markdown(lint_issues):
+    markdown = "\n\n## Generic errors that couldn't be associated with a file.\n"
+    for issue in lint_issues:
+        markdown += f"### {issue.title}\n`{issue.message}`\n[See here for details]({issue.details_url})\n\n"
+    return markdown
+
+
 class BaseRaw:
 
-    def __init__(self, commit_id, success, raw_data):
+    def __init__(self, commit_id, success, raw_data, transformer_cls):
         self._commit_id = commit_id
         self._success = success
         self._raw_data = raw_data
+        self._tcls = transformer_cls
 
     def _conclusion_convert(self):
         if self._success is True:
@@ -97,13 +88,24 @@ class BaseRaw:
     def _iterate_result(self):
         results = []
         for each_result in self._iterator:
-            transformer = Transformer(each_result)
+            transformer = self._tcls(each_result)
             results.append(glr(transformer))
         return results
 
     def generate_output(self):
         flist = []
-        for chunk in chunks(self._iterate_result(), 50):
+        generic = []
+        specific = []
+    
+        for _ir in self._iterate_result():
+            if not _ir.path:
+                generic.append(_ir)
+            else:
+                specific.append(_ir)
+
+        text_markdown = generate_generic_error_markdown(generic) if generic else None
+
+        for chunk in chunks(specific, 50):
             final = FinalResult(
                 name = self.check_name,
                 summary = self.check_summary,
@@ -113,11 +115,28 @@ class BaseRaw:
                 output = FinalResultOutput(
                     title = self.check_name,
                     summary = self.check_summary,
-                    text = None,
+                    text = text_markdown,
                     annotations = chunk
                 )
             )
-            flist.append(final.to_dict())
+            flist.append(final.to_dict(omit_none=True))
+
+        if not flist:
+            final = FinalResult(
+                name = self.check_name,
+                summary = self.check_summary,
+                head_sha = self._commit_id,
+                conclusion = self._conclusion_convert(),
+                status = 'completed',
+                output = FinalResultOutput(
+                    title = self.check_name,
+                    summary = self.check_summary,
+                    text = text_markdown,
+                    annotations = None
+                )
+            )
+            flist.append(final.to_dict(omit_none=True))
+
         return flist
 
 
@@ -143,66 +162,3 @@ class BaseTransformer:
     def __init__(self, raw_result):
         self._item = raw_result
 
-
-class RawData(BaseRaw):
-
-    @property
-    def check_name(self):
-        return 'TFN Linting'
-
-    @property
-    def check_summary(self):
-        return 'Errors occured while linting terraform files'
-
-    @property
-    def iterate_key(self):
-        return 'issues'
-
-
-class Transformer(BaseTransformer):
-
-    @property
-    def ANNOTATION_MAPPING(self):
-        x = {
-            'warning': 'failure'
-        }
-        return x
-
-    @property
-    def path(self):
-        if self._item['range']['filename']:
-            return self._item['range']['filename']
-        return None
-
-    @property
-    def start_line(self):
-        return self._item['range']['start']['line']
-
-    @property
-    def end_line(self):
-        return self._item['range']['end']['line']
-
-    @property
-    def start_column(self):
-        return None
-
-    @property
-    def end_column(self):
-        return None
-
-    @property
-    @convert_annotation
-    def annotation_level(self):
-        return self._item['rule']['severity']
-
-    @property
-    def message(self):
-        return self._item['message']
-
-    @property
-    def title(self):
-        return f"tflint: {self._item['rule']['name']}"
-
-    @property
-    def details_url(self):
-        return self._item['rule']['link']
