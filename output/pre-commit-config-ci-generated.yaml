@@ -25,6 +25,7 @@ repos:
     - --args=--config=.tflint.hcl
     - --args=-f json
     id: terraform_tflint
+    log-file: /tmp/terraform_tflint.tflint
   - args:
     - --args=--custom-check-dir=.tfsec
     id: terraform_tfsec

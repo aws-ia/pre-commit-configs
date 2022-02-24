@@ -4,5 +4,7 @@ root_args:
 repo_args:
   "https://github.com/antonbabenko/pre-commit-terraform":
     terraform_tflint:
+      meta:
+        extension: 'tflint'
       args:
         - "--args=-f json"
