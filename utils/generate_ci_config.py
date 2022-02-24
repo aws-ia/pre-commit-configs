@@ -6,15 +6,22 @@ from pathlib import Path
 def modify_existing(config, existing):
     for k,v in config.get('root_args',{}).items():
         existing[k] = v
+    
     for repo_idx, repo_definition in enumerate(existing.get('repos',[])):
         mod_config = config.get('repo_args',{}).get(repo_definition['repo'])
+        
         if mod_config:
             for hook_idx, hook in enumerate(repo_definition['hooks']):
                 for x,y in mod_config.get(hook['id'], {}).items():
+                    if x == 'meta':
+                        lf_ext = y.get('extension')
+                        if lf_ext:
+                            existing['repos'][repo_idx]['hooks'][hook_idx]['log-file'] = f"/tmp/{hook['id']}.{lf_ext}"
+                        continue
                     if mod_config[hook['id']].get(x):
                         existing['repos'][repo_idx]['hooks'][hook_idx][x] += y
                     else:
-                         existing['repos'][repo_idx]['hooks'][hook_idx][x] = y
+                        existing['repos'][repo_idx]['hooks'][hook_idx][x] = y
     return existing
 
 if __name__ == '__main__':
