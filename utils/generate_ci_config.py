@@ -16,7 +16,7 @@ def modify_existing(config, existing):
                     if x == 'meta':
                         lf_ext = y.get('extension')
                         if lf_ext:
-                            existing['repos'][repo_idx]['hooks'][hook_idx]['log-file'] = f"/tmp/{hook['id']}.{lf_ext}"
+                            existing['repos'][repo_idx]['hooks'][hook_idx]['log_file'] = f"/tmp/{hook['id']}.{lf_ext}"
                         continue
                     if mod_config[hook['id']].get(x):
                         existing['repos'][repo_idx]['hooks'][hook_idx][x] += y
