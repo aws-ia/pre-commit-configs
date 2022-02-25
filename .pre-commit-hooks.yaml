@@ -1,0 +1,6 @@
+- id: aws-ia-pre-commit-wrapper
+  description: A hook wrapper to call AWS-IA team's hooks.
+  name: test wrapper
+  entry: hooks/team-hook-wrapper.sh
+  language: script
+  require_serial: true
