@@ -1,230 +1,496 @@
 {
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLmNoZWNrb3Y": {
-    "https://github.com/antonbabenko/pre-commit-terraform": "checkov"
+    "always_run": false,
+    "description": "Runs checkov on Terraform templates.",
+    "entry": "checkov -d .",
+    "exclude": "\\.terraform\\/.*$",
+    "files": "\\.tf$",
+    "id": "checkov",
+    "language": "python",
+    "name": "Checkov",
+    "pass_filenames": false,
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform",
+    "require_serial": true
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLmluZnJhY29zdF9icmVha2Rvd24": {
-    "https://github.com/antonbabenko/pre-commit-terraform": "infracost_breakdown"
+    "description": "Check terraform infrastructure cost",
+    "entry": "hooks/infracost_breakdown.sh",
+    "exclude": "\\.terraform\\/.*$",
+    "files": "\\.(tf(vars)?|hcl)$",
+    "id": "infracost_breakdown",
+    "language": "script",
+    "name": "Infracost breakdown",
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform",
+    "require_serial": true
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZ3J1bnRfZm10": {
-    "https://github.com/antonbabenko/pre-commit-terraform": "terragrunt_fmt"
+    "description": "Rewrites all Terragrunt configuration files to a canonical format.",
+    "entry": "hooks/terragrunt_fmt.sh",
+    "exclude": "\\.terraform\\/.*$",
+    "files": "(\\.hcl)$",
+    "id": "terragrunt_fmt",
+    "language": "script",
+    "name": "Terragrunt fmt",
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform"
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZ3J1bnRfdmFsaWRhdGU": {
-    "https://github.com/antonbabenko/pre-commit-terraform": "terragrunt_validate"
+    "description": "Validates all Terragrunt configuration files.",
+    "entry": "hooks/terragrunt_validate.sh",
+    "exclude": "\\.terraform\\/.*$",
+    "files": "(\\.hcl)$",
+    "id": "terragrunt_validate",
+    "language": "script",
+    "name": "Terragrunt validate",
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform"
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV90ZmxpbnQ": {
-    "https://github.com/antonbabenko/pre-commit-terraform": "terraform_tflint"
+    "description": "Validates all Terraform configuration files with TFLint.",
+    "entry": "hooks/terraform_tflint.sh",
+    "exclude": "\\.terraform\\/.*$",
+    "files": "(\\.tf|\\.tfvars)$",
+    "id": "terraform_tflint",
+    "language": "script",
+    "name": "Terraform validate with tflint",
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform",
+    "require_serial": true
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV90ZnNlYw": {
-    "https://github.com/antonbabenko/pre-commit-terraform": "terraform_tfsec"
+    "description": "Static analysis of Terraform templates to spot potential security issues.",
+    "entry": "hooks/terraform_tfsec.sh",
+    "id": "terraform_tfsec",
+    "language": "script",
+    "name": "Terraform validate with tfsec",
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform",
+    "require_serial": true
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV92YWxpZGF0ZQ": {
-    "https://github.com/antonbabenko/pre-commit-terraform": "terraform_validate"
+    "description": "Validates all Terraform configuration files.",
+    "entry": "hooks/terraform_validate.sh",
+    "exclude": "\\.terraform\\/.*$",
+    "files": "(\\.tf|\\.tfvars)$",
+    "id": "terraform_validate",
+    "language": "script",
+    "name": "Terraform validate",
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform",
+    "require_serial": true
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9kb2Nz": {
-    "https://github.com/antonbabenko/pre-commit-terraform": "terraform_docs"
+    "description": "Inserts input and output documentation into README.md (using terraform-docs).",
+    "entry": "hooks/terraform_docs.sh",
+    "exclude": "\\.terraform\\/.*$",
+    "files": "(\\.tf|\\.terraform\\.lock\\.hcl)$",
+    "id": "terraform_docs",
+    "language": "script",
+    "name": "Terraform docs",
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform",
+    "require_serial": true
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9kb2NzX3JlcGxhY2U": {
-    "https://github.com/antonbabenko/pre-commit-terraform": "terraform_docs_replace"
+    "description": "Overwrite content of README.md with terraform-docs.",
+    "entry": "terraform_docs_replace",
+    "exclude": "\\.terraform\\/.*$",
+    "files": "(\\.tf)$",
+    "id": "terraform_docs_replace",
+    "language": "python",
+    "name": "Terraform docs (overwrite README.md)",
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform",
+    "require_serial": true
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9kb2NzX3dpdGhvdXRfYWdncmVnYXRlX3R5cGVfZGVmYXVsdHM": {
-    "https://github.com/antonbabenko/pre-commit-terraform": "terraform_docs_without_aggregate_type_defaults"
+    "description": "Inserts input and output documentation into README.md (using terraform-docs). Identical to terraform_docs.",
+    "entry": "hooks/terraform_docs.sh",
+    "exclude": "\\.terraform\\/.*$",
+    "files": "(\\.tf)$",
+    "id": "terraform_docs_without_aggregate_type_defaults",
+    "language": "script",
+    "name": "Terraform docs (without aggregate type defaults)",
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform",
+    "require_serial": true
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9mbXQ": {
-    "https://github.com/antonbabenko/pre-commit-terraform": "terraform_fmt"
+    "description": "Rewrites all Terraform configuration files to a canonical format.",
+    "entry": "hooks/terraform_fmt.sh",
+    "exclude": "\\.terraform\\/.*$",
+    "files": "(\\.tf|\\.tfvars)$",
+    "id": "terraform_fmt",
+    "language": "script",
+    "name": "Terraform fmt",
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform"
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9wcm92aWRlcnNfbG9jaw": {
-    "https://github.com/antonbabenko/pre-commit-terraform": "terraform_providers_lock"
+    "description": "Updates provider signatures in dependency lock files.",
+    "entry": "hooks/terraform_providers_lock.sh",
+    "exclude": "\\.terraform\\/.*$",
+    "files": "(\\.terraform\\.lock\\.hcl)$",
+    "id": "terraform_providers_lock",
+    "language": "script",
+    "name": "Lock terraform provider versions",
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform",
+    "require_serial": true
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhc2Nhbg": {
-    "https://github.com/antonbabenko/pre-commit-terraform": "terrascan"
-  },
-  "YW5kcmV3LWdsZW5uL3ByZS1jb21taXQtdGVycmFmb3JtLmNoZWNrb3Y": {
-    "https://github.com/andrew-glenn/pre-commit-terraform": "checkov"
-  },
-  "YW5kcmV3LWdsZW5uL3ByZS1jb21taXQtdGVycmFmb3JtLmluZnJhY29zdF9icmVha2Rvd24": {
-    "https://github.com/andrew-glenn/pre-commit-terraform": "infracost_breakdown"
-  },
-  "YW5kcmV3LWdsZW5uL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZ3J1bnRfZm10": {
-    "https://github.com/andrew-glenn/pre-commit-terraform": "terragrunt_fmt"
-  },
-  "YW5kcmV3LWdsZW5uL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZ3J1bnRfdmFsaWRhdGU": {
-    "https://github.com/andrew-glenn/pre-commit-terraform": "terragrunt_validate"
-  },
-  "YW5kcmV3LWdsZW5uL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV90ZmxpbnQ": {
-    "https://github.com/andrew-glenn/pre-commit-terraform": "terraform_tflint"
-  },
-  "YW5kcmV3LWdsZW5uL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV90ZnNlYw": {
-    "https://github.com/andrew-glenn/pre-commit-terraform": "terraform_tfsec"
-  },
-  "YW5kcmV3LWdsZW5uL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV92YWxpZGF0ZQ": {
-    "https://github.com/andrew-glenn/pre-commit-terraform": "terraform_validate"
-  },
-  "YW5kcmV3LWdsZW5uL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9kb2Nz": {
-    "https://github.com/andrew-glenn/pre-commit-terraform": "terraform_docs"
-  },
-  "YW5kcmV3LWdsZW5uL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9kb2NzX3JlcGxhY2U": {
-    "https://github.com/andrew-glenn/pre-commit-terraform": "terraform_docs_replace"
-  },
-  "YW5kcmV3LWdsZW5uL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9kb2NzX3dpdGhvdXRfYWdncmVnYXRlX3R5cGVfZGVmYXVsdHM": {
-    "https://github.com/andrew-glenn/pre-commit-terraform": "terraform_docs_without_aggregate_type_defaults"
-  },
-  "YW5kcmV3LWdsZW5uL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9mbXQ": {
-    "https://github.com/andrew-glenn/pre-commit-terraform": "terraform_fmt"
-  },
-  "YW5kcmV3LWdsZW5uL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9wcm92aWRlcnNfbG9jaw": {
-    "https://github.com/andrew-glenn/pre-commit-terraform": "terraform_providers_lock"
-  },
-  "YW5kcmV3LWdsZW5uL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhc2Nhbg": {
-    "https://github.com/andrew-glenn/pre-commit-terraform": "terrascan"
-  },
-  "aGFkb2xpbnQvaGFkb2xpbnQuaGFkb2xpbnQ": {
-    "https://github.com/hadolint/hadolint": "hadolint"
-  },
-  "aGFkb2xpbnQvaGFkb2xpbnQuaGFkb2xpbnQtZG9ja2Vy": {
-    "https://github.com/hadolint/hadolint": "hadolint-docker"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3MuY2hlY2stbWFpbG1hcA": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "check-mailmap"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3MuYnVuZGxlci1hdWRpdA": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "bundler-audit"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3MuZ2l0LWNoZWNr": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "git-check"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3MuZ2l0LWRpcnR5": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "git-dirty"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3MuZm9yYmlkLWJpbmFyeQ": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "forbid-binary"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3MuZm9yYmlkLXNwYWNlLWluLWluZGVudA": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "forbid-space-in-indent"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3MuZmFzdGVyZXI": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "fasterer"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3MubWFya2Rvd25saW50": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "markdownlint"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3Muc2NyaXB0LW11c3QtaGF2ZS1leHRlbnNpb24": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "script-must-have-extension"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3Muc2NyaXB0LW11c3Qtbm90LWhhdmUtZXh0ZW5zaW9u": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "script-must-not-have-extension"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3Muc2hlbGxjaGVjaw": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "shellcheck"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3Muc2hmbXQ": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "shfmt"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3MucHJvdGVjdC1maXJzdC1wYXJlbnQ": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "protect-first-parent"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3MucmVlaw": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "reek"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3MucmVxdWlyZS1hc2NpaQ": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "require-ascii"
-  },
-  "anVtYW5qaWhvdXNlL3ByZS1jb21taXQtaG9va3MucnVib2NvcA": {
-    "https://github.com/jumanjihouse/pre-commit-hooks": "rubocop"
+    "description": "Runs terrascan on Terraform templates.",
+    "entry": "hooks/terrascan.sh",
+    "exclude": "\\.terraform\\/.*$",
+    "files": "\\.tf$",
+    "id": "terrascan",
+    "language": "script",
+    "name": "terrascan",
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform",
+    "require_serial": true
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLm1peGVkLWxpbmUtZW5kaW5n": {
-    "https://github.com/pre-commit/pre-commit-hooks": "mixed-line-ending"
+    "description": "Replaces or checks mixed line ending",
+    "entry": "mixed-line-ending",
+    "id": "mixed-line-ending",
+    "language": "python",
+    "name": "Mixed line ending",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "text"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLm5hbWUtdGVzdHMtdGVzdA": {
-    "https://github.com/pre-commit/pre-commit-hooks": "name-tests-test"
+    "description": "This verifies that test files are named correctly",
+    "entry": "name-tests-test",
+    "files": "(^|/)tests/.+\\.py$",
+    "id": "name-tests-test",
+    "language": "python",
+    "name": "Tests should end in _test.py",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLm5vLWNvbW1pdC10by1icmFuY2g": {
-    "https://github.com/pre-commit/pre-commit-hooks": "no-commit-to-branch"
+    "always_run": true,
+    "entry": "no-commit-to-branch",
+    "id": "no-commit-to-branch",
+    "language": "python",
+    "name": "Don't commit to branch",
+    "pass_filenames": false,
+    "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLW1lcmdlLWNvbmZsaWN0": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-merge-conflict"
+    "description": "Check for files that contain merge conflict strings.",
+    "entry": "check-merge-conflict",
+    "id": "check-merge-conflict",
+    "language": "python",
+    "name": "Check for merge conflicts",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "text"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWFkZGVkLWxhcmdlLWZpbGVz": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-added-large-files"
+    "description": "Prevent giant files from being committed",
+    "entry": "check-added-large-files",
+    "id": "check-added-large-files",
+    "language": "python",
+    "name": "Check for added large files",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWFzdA": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-ast"
+    "description": "Simply check whether the files parse as valid python.",
+    "entry": "check-ast",
+    "id": "check-ast",
+    "language": "python",
+    "name": "Check python ast",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "python"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWJ1aWx0aW4tbGl0ZXJhbHM": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-builtin-literals"
+    "description": "Require literal syntax when initializing empty or zero Python builtin types.",
+    "entry": "check-builtin-literals",
+    "id": "check-builtin-literals",
+    "language": "python",
+    "name": "Check builtin type constructor use",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "python"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWJ5dGUtb3JkZXItbWFya2Vy": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-byte-order-marker"
+    "description": "forbid files which have a UTF-8 byte-order marker",
+    "entry": "check-byte-order-marker",
+    "id": "check-byte-order-marker",
+    "language": "python",
+    "name": "check BOM - deprecated: use fix-byte-order-marker",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "text"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWNhc2UtY29uZmxpY3Q": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-case-conflict"
+    "description": "Check for files that would conflict in case-insensitive filesystems",
+    "entry": "check-case-conflict",
+    "id": "check-case-conflict",
+    "language": "python",
+    "name": "Check for case conflicts",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWRvY3N0cmluZy1maXJzdA": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-docstring-first"
+    "description": "Checks a common error of defining a docstring after code.",
+    "entry": "check-docstring-first",
+    "id": "check-docstring-first",
+    "language": "python",
+    "name": "Check docstring is first",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "python"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWV4ZWN1dGFibGVzLWhhdmUtc2hlYmFuZ3M": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-executables-have-shebangs"
+    "description": "Ensures that (non-binary) executables have a shebang.",
+    "entry": "check-executables-have-shebangs",
+    "id": "check-executables-have-shebangs",
+    "language": "python",
+    "name": "Check that executables have shebangs",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "stages": [
+      "commit",
+      "push",
+      "manual"
+    ],
+    "types": [
+      "text",
+      "executable"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWpzb24": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-json"
+    "description": "This hook checks json files for parseable syntax.",
+    "entry": "check-json",
+    "id": "check-json",
+    "language": "python",
+    "name": "Check JSON",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "json"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLXN5bWxpbmtz": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-symlinks"
+    "description": "Checks for symlinks which do not point to anything.",
+    "entry": "check-symlinks",
+    "id": "check-symlinks",
+    "language": "python",
+    "name": "Check for broken symlinks",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "symlink"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLXNoZWJhbmctc2NyaXB0cy1hcmUtZXhlY3V0YWJsZQ": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-shebang-scripts-are-executable"
+    "description": "Ensures that (non-binary) files with a shebang are executable.",
+    "entry": "check-shebang-scripts-are-executable",
+    "id": "check-shebang-scripts-are-executable",
+    "language": "python",
+    "name": "Check that scripts with shebangs are executable",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "stages": [
+      "commit",
+      "push",
+      "manual"
+    ],
+    "types": [
+      "text"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLXRvbWw": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-toml"
+    "description": "This hook checks toml files for parseable syntax.",
+    "entry": "check-toml",
+    "id": "check-toml",
+    "language": "python",
+    "name": "Check Toml",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "toml"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLXZjcy1wZXJtYWxpbmtz": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-vcs-permalinks"
+    "description": "Ensures that links to vcs websites are permalinks.",
+    "entry": "check-vcs-permalinks",
+    "id": "check-vcs-permalinks",
+    "language": "python",
+    "name": "Check vcs permalinks",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "text"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLXhtbA": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-xml"
+    "description": "This hook checks xml files for parseable syntax.",
+    "entry": "check-xml",
+    "id": "check-xml",
+    "language": "python",
+    "name": "Check Xml",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "xml"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLXlhbWw": {
-    "https://github.com/pre-commit/pre-commit-hooks": "check-yaml"
+    "description": "This hook checks yaml files for parseable syntax.",
+    "entry": "check-yaml",
+    "id": "check-yaml",
+    "language": "python",
+    "name": "Check Yaml",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "yaml"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmRlYnVnLXN0YXRlbWVudHM": {
-    "https://github.com/pre-commit/pre-commit-hooks": "debug-statements"
+    "description": "Check for debugger imports and py37+ `breakpoint()` calls in python source.",
+    "entry": "debug-statement-hook",
+    "id": "debug-statements",
+    "language": "python",
+    "name": "Debug Statements (Python)",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "python"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmRlc3Ryb3llZC1zeW1saW5rcw": {
-    "https://github.com/pre-commit/pre-commit-hooks": "destroyed-symlinks"
+    "description": "Detects symlinks which are changed to regular files with a content of a path which that symlink was pointing to.",
+    "entry": "destroyed-symlinks",
+    "id": "destroyed-symlinks",
+    "language": "python",
+    "name": "Detect Destroyed Symlinks",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "file"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmRldGVjdC1hd3MtY3JlZGVudGlhbHM": {
-    "https://github.com/pre-commit/pre-commit-hooks": "detect-aws-credentials"
+    "description": "Detects *your* aws credentials from the aws cli credentials file",
+    "entry": "detect-aws-credentials",
+    "id": "detect-aws-credentials",
+    "language": "python",
+    "name": "Detect AWS Credentials",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "text"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmRldGVjdC1wcml2YXRlLWtleQ": {
-    "https://github.com/pre-commit/pre-commit-hooks": "detect-private-key"
+    "description": "Detects the presence of private keys",
+    "entry": "detect-private-key",
+    "id": "detect-private-key",
+    "language": "python",
+    "name": "Detect Private Key",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "text"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmRvdWJsZS1xdW90ZS1zdHJpbmctZml4ZXI": {
-    "https://github.com/pre-commit/pre-commit-hooks": "double-quote-string-fixer"
+    "description": "This hook replaces double quoted strings with single quoted strings",
+    "entry": "double-quote-string-fixer",
+    "id": "double-quote-string-fixer",
+    "language": "python",
+    "name": "Fix double quoted strings",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "python"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmVuZC1vZi1maWxlLWZpeGVy": {
-    "https://github.com/pre-commit/pre-commit-hooks": "end-of-file-fixer"
+    "description": "Ensures that a file is either empty, or ends with one newline.",
+    "entry": "end-of-file-fixer",
+    "id": "end-of-file-fixer",
+    "language": "python",
+    "name": "Fix End of Files",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "stages": [
+      "commit",
+      "push",
+      "manual"
+    ],
+    "types": [
+      "text"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmZpbGUtY29udGVudHMtc29ydGVy": {
-    "https://github.com/pre-commit/pre-commit-hooks": "file-contents-sorter"
+    "description": "Sort the lines in specified files (defaults to alphabetical). You must provide list of target files as input in your .pre-commit-config.yaml file.",
+    "entry": "file-contents-sorter",
+    "files": "^$",
+    "id": "file-contents-sorter",
+    "language": "python",
+    "name": "File Contents Sorter",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmZpeC1ieXRlLW9yZGVyLW1hcmtlcg": {
-    "https://github.com/pre-commit/pre-commit-hooks": "fix-byte-order-marker"
+    "description": "removes UTF-8 byte order marker",
+    "entry": "fix-byte-order-marker",
+    "id": "fix-byte-order-marker",
+    "language": "python",
+    "name": "fix UTF-8 byte order marker",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "text"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmZpeC1lbmNvZGluZy1wcmFnbWE": {
-    "https://github.com/pre-commit/pre-commit-hooks": "fix-encoding-pragma"
+    "description": "Add # -*- coding: utf-8 -*- to the top of python files",
+    "entry": "fix-encoding-pragma",
+    "id": "fix-encoding-pragma",
+    "language": "python",
+    "name": "Fix python encoding pragma",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "python"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmZvcmJpZC1uZXctc3VibW9kdWxlcw": {
-    "https://github.com/pre-commit/pre-commit-hooks": "forbid-new-submodules"
+    "description": "Prevent addition of new git submodules",
+    "entry": "forbid-new-submodules",
+    "id": "forbid-new-submodules",
+    "language": "python",
+    "name": "Forbid new submodules",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLnByZXR0eS1mb3JtYXQtanNvbg": {
-    "https://github.com/pre-commit/pre-commit-hooks": "pretty-format-json"
+    "description": "This hook sets a standard for formatting JSON files.",
+    "entry": "pretty-format-json",
+    "id": "pretty-format-json",
+    "language": "python",
+    "name": "Pretty format JSON",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "json"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLnJlcXVpcmVtZW50cy10eHQtZml4ZXI": {
-    "https://github.com/pre-commit/pre-commit-hooks": "requirements-txt-fixer"
+    "description": "Sorts entries in requirements.txt",
+    "entry": "requirements-txt-fixer",
+    "files": "requirements.*\\.txt$",
+    "id": "requirements-txt-fixer",
+    "language": "python",
+    "name": "Fix requirements.txt",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLnNvcnQtc2ltcGxlLXlhbWw": {
-    "https://github.com/pre-commit/pre-commit-hooks": "sort-simple-yaml"
+    "description": "Sorts simple YAML files which consist only of top-level keys, preserving comments and blocks.",
+    "entry": "sort-simple-yaml",
+    "files": "^$",
+    "id": "sort-simple-yaml",
+    "language": "python",
+    "name": "Sort simple YAML files",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLnRyYWlsaW5nLXdoaXRlc3BhY2U": {
-    "https://github.com/pre-commit/pre-commit-hooks": "trailing-whitespace"
+    "description": "This hook trims trailing whitespace.",
+    "entry": "trailing-whitespace-fixer",
+    "id": "trailing-whitespace",
+    "language": "python",
+    "name": "Trim Trailing Whitespace",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "stages": [
+      "commit",
+      "push",
+      "manual"
+    ],
+    "types": [
+      "text"
+    ]
   }
 }
