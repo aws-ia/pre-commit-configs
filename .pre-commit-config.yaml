@@ -1,6 +1,6 @@
 ---
 
-fail_fast: true
+fail_fast: false
 minimum_pre_commit_version: "2.6.0"
 
 repos:
