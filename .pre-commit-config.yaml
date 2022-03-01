@@ -42,7 +42,7 @@ repos:
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_docs
       - id: terraform_docs
         args:
-          - "--args=--config=__GIT_WORKING_DIR__/.terraform-docs.yaml"
+          - "--args=--config=.terraform-docs.yaml"
 
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_providers_lock
       - id: terraform_providers_lock
