@@ -2,6 +2,12 @@
 root_args:
   fail_fast: false
 repo_args:
+  "https://github.com/aws-quickstart/qs-cfn-lint-rules":
+    qs-cfn-lint:
+      meta:
+        extension: 'cfnlint'
+      args:
+        - '--args=f json'
   "https://github.com/antonbabenko/pre-commit-terraform":
     terraform_tflint:
       meta:

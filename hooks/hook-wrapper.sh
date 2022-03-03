@@ -2,6 +2,6 @@
 readonly SCRIPT_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 readonly UPSTREAM_DIR="${SCRIPT_DIR%/*}"
 function main(){
-    pre-commit run -c ${UPSTREAM_DIR}/.pre-commit-config.yaml
+    pre-commit run -c ${UPSTREAM_DIR}/common-pre-commit-config.yaml
 }
 main

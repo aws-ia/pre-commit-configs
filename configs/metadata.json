@@ -3,7 +3,7 @@
     "always_run": false,
     "description": "Runs checkov on Terraform templates.",
     "entry": "checkov -d .",
-    "exclude": "\\.terraform\\/.*$",
+    "exclude": "\\.+.terraform\\/.*$",
     "files": "\\.tf$",
     "id": "checkov",
     "language": "python",
@@ -14,7 +14,7 @@
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLmluZnJhY29zdF9icmVha2Rvd24": {
     "description": "Check terraform infrastructure cost",
-    "entry": "hooks/infracost_breakdown.sh",
+    "entry": "infracost_breakdown.sh",
     "exclude": "\\.terraform\\/.*$",
     "files": "\\.(tf(vars)?|hcl)$",
     "id": "infracost_breakdown",
@@ -25,7 +25,7 @@
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZ3J1bnRfZm10": {
     "description": "Rewrites all Terragrunt configuration files to a canonical format.",
-    "entry": "hooks/terragrunt_fmt.sh",
+    "entry": "terragrunt_fmt.sh",
     "exclude": "\\.terraform\\/.*$",
     "files": "(\\.hcl)$",
     "id": "terragrunt_fmt",
@@ -35,7 +35,7 @@
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZ3J1bnRfdmFsaWRhdGU": {
     "description": "Validates all Terragrunt configuration files.",
-    "entry": "hooks/terragrunt_validate.sh",
+    "entry": "terragrunt_validate.sh",
     "exclude": "\\.terraform\\/.*$",
     "files": "(\\.hcl)$",
     "id": "terragrunt_validate",
@@ -45,7 +45,7 @@
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV90ZmxpbnQ": {
     "description": "Validates all Terraform configuration files with TFLint.",
-    "entry": "hooks/terraform_tflint.sh",
+    "entry": "terraform_tflint.sh",
     "exclude": "\\.terraform\\/.*$",
     "files": "(\\.tf|\\.tfvars)$",
     "id": "terraform_tflint",
@@ -56,7 +56,7 @@
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV90ZnNlYw": {
     "description": "Static analysis of Terraform templates to spot potential security issues.",
-    "entry": "hooks/terraform_tfsec.sh",
+    "entry": "terraform_tfsec.sh",
     "id": "terraform_tfsec",
     "language": "script",
     "name": "Terraform validate with tfsec",
@@ -65,7 +65,7 @@
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV92YWxpZGF0ZQ": {
     "description": "Validates all Terraform configuration files.",
-    "entry": "hooks/terraform_validate.sh",
+    "entry": "terraform_validate.sh",
     "exclude": "\\.terraform\\/.*$",
     "files": "(\\.tf|\\.tfvars)$",
     "id": "terraform_validate",
@@ -76,7 +76,7 @@
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9kb2Nz": {
     "description": "Inserts input and output documentation into README.md (using terraform-docs).",
-    "entry": "hooks/terraform_docs.sh",
+    "entry": "terraform_docs.sh",
     "exclude": "\\.terraform\\/.*$",
     "files": "(\\.tf|\\.terraform\\.lock\\.hcl)$",
     "id": "terraform_docs",
@@ -98,7 +98,7 @@
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9kb2NzX3dpdGhvdXRfYWdncmVnYXRlX3R5cGVfZGVmYXVsdHM": {
     "description": "Inserts input and output documentation into README.md (using terraform-docs). Identical to terraform_docs.",
-    "entry": "hooks/terraform_docs.sh",
+    "entry": "terraform_docs.sh",
     "exclude": "\\.terraform\\/.*$",
     "files": "(\\.tf)$",
     "id": "terraform_docs_without_aggregate_type_defaults",
@@ -109,7 +109,7 @@
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9mbXQ": {
     "description": "Rewrites all Terraform configuration files to a canonical format.",
-    "entry": "hooks/terraform_fmt.sh",
+    "entry": "terraform_fmt.sh",
     "exclude": "\\.terraform\\/.*$",
     "files": "(\\.tf|\\.tfvars)$",
     "id": "terraform_fmt",
@@ -119,7 +119,7 @@
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV9wcm92aWRlcnNfbG9jaw": {
     "description": "Updates provider signatures in dependency lock files.",
-    "entry": "hooks/terraform_providers_lock.sh",
+    "entry": "terraform_providers_lock.sh",
     "exclude": "\\.terraform\\/.*$",
     "files": "(\\.terraform\\.lock\\.hcl)$",
     "id": "terraform_providers_lock",
@@ -130,14 +130,11 @@
   },
   "YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhc2Nhbg": {
     "description": "Runs terrascan on Terraform templates.",
-    "entry": "hooks/terrascan.sh",
-    "exclude": "\\.terraform\\/.*$",
-    "files": "\\.tf$",
+    "entry": "terrascan.sh",
     "id": "terrascan",
     "language": "script",
     "name": "terrascan",
-    "repo": "https://github.com/antonbabenko/pre-commit-terraform",
-    "require_serial": true
+    "repo": "https://github.com/antonbabenko/pre-commit-terraform"
   },
   "YXdzLXF1aWNrc3RhcnQvcXMtY2ZuLWxpbnQtcnVsZXMucXMtY2ZuLWxpbnQ": {
     "entry": "cfn-lint",
@@ -175,20 +172,6 @@
     "name": "Don't commit to branch",
     "pass_filenames": false,
     "repo": "https://github.com/pre-commit/pre-commit-hooks"
-  },
-  "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmF1dG9wZXA4LXdyYXBwZXI": {
-    "args": [
-      "-i"
-    ],
-    "description": "This is deprecated, use pre-commit/mirrors-autopep8 instead.",
-    "entry": "autopep8-wrapper",
-    "id": "autopep8-wrapper",
-    "language": "python",
-    "name": "autopep8 wrapper",
-    "repo": "https://github.com/pre-commit/pre-commit-hooks",
-    "types": [
-      "python"
-    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLW1lcmdlLWNvbmZsaWN0": {
     "description": "Check for files that contain merge conflict strings.",
@@ -232,11 +215,11 @@
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWJ5dGUtb3JkZXItbWFya2Vy": {
-    "description": "Forbid files which have a UTF-8 byte-order marker",
+    "description": "forbid files which have a UTF-8 byte-order marker",
     "entry": "check-byte-order-marker",
     "id": "check-byte-order-marker",
     "language": "python",
-    "name": "Check for byte-order marker",
+    "name": "check BOM - deprecated: use fix-byte-order-marker",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "text"
@@ -462,18 +445,6 @@
       "python"
     ]
   },
-  "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmZsYWtlOA": {
-    "description": "This hook runs flake8.",
-    "entry": "flake8",
-    "id": "flake8",
-    "language": "python",
-    "name": "Flake8",
-    "repo": "https://github.com/pre-commit/pre-commit-hooks",
-    "require_serial": true,
-    "types": [
-      "python"
-    ]
-  },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmZvcmJpZC1uZXctc3VibW9kdWxlcw": {
     "description": "Prevent addition of new git submodules",
     "entry": "forbid-new-submodules",
@@ -481,17 +452,6 @@
     "language": "python",
     "name": "Forbid new submodules",
     "repo": "https://github.com/pre-commit/pre-commit-hooks"
-  },
-  "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLnB5Zmxha2Vz": {
-    "description": "This hook runs pyflakes. (This is deprecated, use flake8).",
-    "entry": "pyflakes",
-    "id": "pyflakes",
-    "language": "python",
-    "name": "Pyflakes (DEPRECATED, use flake8)",
-    "repo": "https://github.com/pre-commit/pre-commit-hooks",
-    "types": [
-      "python"
-    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLnByZXR0eS1mb3JtYXQtanNvbg": {
     "description": "This hook sets a standard for formatting JSON files.",

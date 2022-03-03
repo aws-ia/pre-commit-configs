@@ -65,7 +65,7 @@ def modify_existing(config, existing, hmd):
                             fn_prefix = hmd['r'][repo_definition['repo']][hook['id']]
                             existing['repos'][repo_idx]['hooks'][hook_idx]['log_file'] = f"/tmp/{fn_prefix}.{lf_ext}"
                         continue
-                    if mod_config[hook['id']].get(x):
+                    if existing['repos'][repo_idx]['hooks'][hook_idx].get(x):
                         existing['repos'][repo_idx]['hooks'][hook_idx][x] += y
                     else:
                         existing['repos'][repo_idx]['hooks'][hook_idx][x] = y
