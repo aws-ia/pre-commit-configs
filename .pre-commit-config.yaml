@@ -55,4 +55,8 @@ repos:
       - id: terraform_tfsec
         args:
           - "--args=--custom-check-dir=__GIT_WORKING_DIR__/.tfsec"
-
+  - repo: https://github.com/aws-quickstart/qs-cfn-lint-rules
+    rev: main
+    hooks:
+      - id: qs-cfn-lint
+        files: templates/.*(\.template)?\.(yaml|yml|json)$

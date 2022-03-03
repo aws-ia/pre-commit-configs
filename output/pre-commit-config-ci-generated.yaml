@@ -42,3 +42,8 @@ repos:
     id: terraform_tfsec
   repo: https://github.com/antonbabenko/pre-commit-terraform
   rev: v1.62.0
+- hooks:
+  - files: templates/.*(\.template)?\.(yaml|yml|json)$
+    id: qs-cfn-lint
+  repo: https://github.com/aws-quickstart/qs-cfn-lint-rules
+  rev: main

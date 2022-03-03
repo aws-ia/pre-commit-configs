@@ -139,6 +139,14 @@
     "repo": "https://github.com/antonbabenko/pre-commit-terraform",
     "require_serial": true
   },
+  "YXdzLXF1aWNrc3RhcnQvcXMtY2ZuLWxpbnQtcnVsZXMucXMtY2ZuLWxpbnQ": {
+    "entry": "cfn-lint",
+    "files": "\\.(json|yaml|yml)$",
+    "id": "qs-cfn-lint",
+    "language": "python",
+    "name": "AWS Quick Start Linter",
+    "repo": "https://github.com/aws-quickstart/qs-cfn-lint-rules"
+  },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLm1peGVkLWxpbmUtZW5kaW5n": {
     "description": "Replaces or checks mixed line ending",
     "entry": "mixed-line-ending",
@@ -167,6 +175,20 @@
     "name": "Don't commit to branch",
     "pass_filenames": false,
     "repo": "https://github.com/pre-commit/pre-commit-hooks"
+  },
+  "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmF1dG9wZXA4LXdyYXBwZXI": {
+    "args": [
+      "-i"
+    ],
+    "description": "This is deprecated, use pre-commit/mirrors-autopep8 instead.",
+    "entry": "autopep8-wrapper",
+    "id": "autopep8-wrapper",
+    "language": "python",
+    "name": "autopep8 wrapper",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "python"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLW1lcmdlLWNvbmZsaWN0": {
     "description": "Check for files that contain merge conflict strings.",
@@ -210,11 +232,11 @@
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWJ5dGUtb3JkZXItbWFya2Vy": {
-    "description": "forbid files which have a UTF-8 byte-order marker",
+    "description": "Forbid files which have a UTF-8 byte-order marker",
     "entry": "check-byte-order-marker",
     "id": "check-byte-order-marker",
     "language": "python",
-    "name": "check BOM - deprecated: use fix-byte-order-marker",
+    "name": "Check for byte-order marker",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "text"
@@ -440,6 +462,18 @@
       "python"
     ]
   },
+  "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmZsYWtlOA": {
+    "description": "This hook runs flake8.",
+    "entry": "flake8",
+    "id": "flake8",
+    "language": "python",
+    "name": "Flake8",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "require_serial": true,
+    "types": [
+      "python"
+    ]
+  },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmZvcmJpZC1uZXctc3VibW9kdWxlcw": {
     "description": "Prevent addition of new git submodules",
     "entry": "forbid-new-submodules",
@@ -447,6 +481,17 @@
     "language": "python",
     "name": "Forbid new submodules",
     "repo": "https://github.com/pre-commit/pre-commit-hooks"
+  },
+  "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLnB5Zmxha2Vz": {
+    "description": "This hook runs pyflakes. (This is deprecated, use flake8).",
+    "entry": "pyflakes",
+    "id": "pyflakes",
+    "language": "python",
+    "name": "Pyflakes (DEPRECATED, use flake8)",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "python"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLnByZXR0eS1mb3JtYXQtanNvbg": {
     "description": "This hook sets a standard for formatting JSON files.",
