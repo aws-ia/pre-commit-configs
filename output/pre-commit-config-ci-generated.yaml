@@ -33,12 +33,12 @@ repos:
     id: terraform_docs
   - id: terraform_providers_lock
   - args:
-    - --args=--config=.tflint.hcl
+    - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl
     - --args=-f json
     id: terraform_tflint
     log_file: /tmp/YW50b25iYWJlbmtvL3ByZS1jb21taXQtdGVycmFmb3JtLnRlcnJhZm9ybV90ZmxpbnQ.tflint
   - args:
-    - --args=--custom-check-dir=.tfsec
+    - --args=--custom-check-dir=__GIT_WORKING_DIR__/.tfsec
     id: terraform_tfsec
   repo: https://github.com/antonbabenko/pre-commit-terraform
   rev: v1.62.0
