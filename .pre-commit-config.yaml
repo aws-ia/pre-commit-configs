@@ -47,10 +47,7 @@ repos:
         args:
           - "--args=--custom-check-dir=__GIT_WORKING_DIR__/.tfsec"
   - repo: https://github.com/aws-quickstart/qs-cfn-lint-rules
-    rev: main
+    rev: v1.0
     hooks:
-      - id: qs-cfn-lint
+      - id: qs-cfn-lint-wrapped
         files: templates/.*(\.template)?\.(yaml|yml|json)$
-          #        args:
-          #          - "-i=W"
-          #          - "-i=I"
