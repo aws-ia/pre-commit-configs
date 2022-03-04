@@ -4,14 +4,6 @@ fail_fast: false
 minimum_pre_commit_version: "2.6.0"
 
 repos:
-  - repo: local
-    hooks:
-      - id: generate-pre-commit-ci-config
-        name: Geneate pre-commit config for CI usage
-        language: script
-        entry: ./hooks/pre-commit-generate.sh
-        pass_filenames: false
-        files: .pre-commit-config.yaml$
   -
     repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1

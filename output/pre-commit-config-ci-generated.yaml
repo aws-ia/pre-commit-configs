@@ -2,14 +2,6 @@ fail_fast: false
 minimum_pre_commit_version: 2.6.0
 repos:
 - hooks:
-  - entry: ./hooks/pre-commit-generate.sh
-    files: .pre-commit-config.yaml$
-    id: generate-pre-commit-ci-config
-    language: script
-    name: Geneate pre-commit config for CI usage
-    pass_filenames: false
-  repo: local
-- hooks:
   - id: check-added-large-files
   - id: check-case-conflict
   - id: check-merge-conflict
