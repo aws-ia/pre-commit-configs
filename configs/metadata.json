@@ -145,23 +145,23 @@
     "repo": "https://github.com/aws-quickstart/qs-cfn-lint-rules"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLm1peGVkLWxpbmUtZW5kaW5n": {
-    "description": "Replaces or checks mixed line ending",
+    "description": "replaces or checks mixed line ending.",
     "entry": "mixed-line-ending",
     "id": "mixed-line-ending",
     "language": "python",
-    "name": "Mixed line ending",
+    "name": "mixed line ending",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "text"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLm5hbWUtdGVzdHMtdGVzdA": {
-    "description": "This verifies that test files are named correctly",
+    "description": "this verifies that test files are named correctly.",
     "entry": "name-tests-test",
     "files": "(^|/)tests/.+\\.py$",
     "id": "name-tests-test",
     "language": "python",
-    "name": "Tests should end in _test.py",
+    "name": "tests should end in _test.py",
     "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLm5vLWNvbW1pdC10by1icmFuY2g": {
@@ -169,53 +169,53 @@
     "entry": "no-commit-to-branch",
     "id": "no-commit-to-branch",
     "language": "python",
-    "name": "Don't commit to branch",
+    "name": "don't commit to branch",
     "pass_filenames": false,
     "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLW1lcmdlLWNvbmZsaWN0": {
-    "description": "Check for files that contain merge conflict strings.",
+    "description": "checks for files that contain merge conflict strings.",
     "entry": "check-merge-conflict",
     "id": "check-merge-conflict",
     "language": "python",
-    "name": "Check for merge conflicts",
+    "name": "check for merge conflicts",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "text"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWFkZGVkLWxhcmdlLWZpbGVz": {
-    "description": "Prevent giant files from being committed",
+    "description": "prevents giant files from being committed.",
     "entry": "check-added-large-files",
     "id": "check-added-large-files",
     "language": "python",
-    "name": "Check for added large files",
+    "name": "check for added large files",
     "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWFzdA": {
-    "description": "Simply check whether the files parse as valid python.",
+    "description": "simply checks whether the files parse as valid python.",
     "entry": "check-ast",
     "id": "check-ast",
     "language": "python",
-    "name": "Check python ast",
+    "name": "check python ast",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "python"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWJ1aWx0aW4tbGl0ZXJhbHM": {
-    "description": "Require literal syntax when initializing empty or zero Python builtin types.",
+    "description": "requires literal syntax when initializing empty or zero python builtin types.",
     "entry": "check-builtin-literals",
     "id": "check-builtin-literals",
     "language": "python",
-    "name": "Check builtin type constructor use",
+    "name": "check builtin type constructor use",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "python"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWJ5dGUtb3JkZXItbWFya2Vy": {
-    "description": "forbid files which have a UTF-8 byte-order marker",
+    "description": "forbids files which have a utf-8 byte-order marker.",
     "entry": "check-byte-order-marker",
     "id": "check-byte-order-marker",
     "language": "python",
@@ -226,30 +226,30 @@
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWNhc2UtY29uZmxpY3Q": {
-    "description": "Check for files that would conflict in case-insensitive filesystems",
+    "description": "checks for files that would conflict in case-insensitive filesystems.",
     "entry": "check-case-conflict",
     "id": "check-case-conflict",
     "language": "python",
-    "name": "Check for case conflicts",
+    "name": "check for case conflicts",
     "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWRvY3N0cmluZy1maXJzdA": {
-    "description": "Checks a common error of defining a docstring after code.",
+    "description": "checks a common error of defining a docstring after code.",
     "entry": "check-docstring-first",
     "id": "check-docstring-first",
     "language": "python",
-    "name": "Check docstring is first",
+    "name": "check docstring is first",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "python"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWV4ZWN1dGFibGVzLWhhdmUtc2hlYmFuZ3M": {
-    "description": "Ensures that (non-binary) executables have a shebang.",
+    "description": "ensures that (non-binary) executables have a shebang.",
     "entry": "check-executables-have-shebangs",
     "id": "check-executables-have-shebangs",
     "language": "python",
-    "name": "Check that executables have shebangs",
+    "name": "check that executables have shebangs",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "stages": [
       "commit",
@@ -262,33 +262,33 @@
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLWpzb24": {
-    "description": "This hook checks json files for parseable syntax.",
+    "description": "checks json files for parseable syntax.",
     "entry": "check-json",
     "id": "check-json",
     "language": "python",
-    "name": "Check JSON",
+    "name": "check json",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "json"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLXN5bWxpbmtz": {
-    "description": "Checks for symlinks which do not point to anything.",
+    "description": "checks for symlinks which do not point to anything.",
     "entry": "check-symlinks",
     "id": "check-symlinks",
     "language": "python",
-    "name": "Check for broken symlinks",
+    "name": "check for broken symlinks",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "symlink"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLXNoZWJhbmctc2NyaXB0cy1hcmUtZXhlY3V0YWJsZQ": {
-    "description": "Ensures that (non-binary) files with a shebang are executable.",
+    "description": "ensures that (non-binary) files with a shebang are executable.",
     "entry": "check-shebang-scripts-are-executable",
     "id": "check-shebang-scripts-are-executable",
     "language": "python",
-    "name": "Check that scripts with shebangs are executable",
+    "name": "check that scripts with shebangs are executable",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "stages": [
       "commit",
@@ -300,110 +300,110 @@
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLXRvbWw": {
-    "description": "This hook checks toml files for parseable syntax.",
+    "description": "checks toml files for parseable syntax.",
     "entry": "check-toml",
     "id": "check-toml",
     "language": "python",
-    "name": "Check Toml",
+    "name": "check toml",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "toml"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLXZjcy1wZXJtYWxpbmtz": {
-    "description": "Ensures that links to vcs websites are permalinks.",
+    "description": "ensures that links to vcs websites are permalinks.",
     "entry": "check-vcs-permalinks",
     "id": "check-vcs-permalinks",
     "language": "python",
-    "name": "Check vcs permalinks",
+    "name": "check vcs permalinks",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "text"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLXhtbA": {
-    "description": "This hook checks xml files for parseable syntax.",
+    "description": "checks xml files for parseable syntax.",
     "entry": "check-xml",
     "id": "check-xml",
     "language": "python",
-    "name": "Check Xml",
+    "name": "check xml",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "xml"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmNoZWNrLXlhbWw": {
-    "description": "This hook checks yaml files for parseable syntax.",
+    "description": "checks yaml files for parseable syntax.",
     "entry": "check-yaml",
     "id": "check-yaml",
     "language": "python",
-    "name": "Check Yaml",
+    "name": "check yaml",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "yaml"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmRlYnVnLXN0YXRlbWVudHM": {
-    "description": "Check for debugger imports and py37+ `breakpoint()` calls in python source.",
+    "description": "checks for debugger imports and py37+ `breakpoint()` calls in python source.",
     "entry": "debug-statement-hook",
     "id": "debug-statements",
     "language": "python",
-    "name": "Debug Statements (Python)",
+    "name": "debug statements (python)",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "python"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmRlc3Ryb3llZC1zeW1saW5rcw": {
-    "description": "Detects symlinks which are changed to regular files with a content of a path which that symlink was pointing to.",
+    "description": "detects symlinks which are changed to regular files with a content of a path which that symlink was pointing to.",
     "entry": "destroyed-symlinks",
     "id": "destroyed-symlinks",
     "language": "python",
-    "name": "Detect Destroyed Symlinks",
+    "name": "detect destroyed symlinks",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "file"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmRldGVjdC1hd3MtY3JlZGVudGlhbHM": {
-    "description": "Detects *your* aws credentials from the aws cli credentials file",
+    "description": "detects *your* aws credentials from the aws cli credentials file.",
     "entry": "detect-aws-credentials",
     "id": "detect-aws-credentials",
     "language": "python",
-    "name": "Detect AWS Credentials",
+    "name": "detect aws credentials",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "text"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmRldGVjdC1wcml2YXRlLWtleQ": {
-    "description": "Detects the presence of private keys",
+    "description": "detects the presence of private keys.",
     "entry": "detect-private-key",
     "id": "detect-private-key",
     "language": "python",
-    "name": "Detect Private Key",
+    "name": "detect private key",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "text"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmRvdWJsZS1xdW90ZS1zdHJpbmctZml4ZXI": {
-    "description": "This hook replaces double quoted strings with single quoted strings",
+    "description": "replaces double quoted strings with single quoted strings.",
     "entry": "double-quote-string-fixer",
     "id": "double-quote-string-fixer",
     "language": "python",
-    "name": "Fix double quoted strings",
+    "name": "fix double quoted strings",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "python"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmVuZC1vZi1maWxlLWZpeGVy": {
-    "description": "Ensures that a file is either empty, or ends with one newline.",
+    "description": "ensures that a file is either empty, or ends with one newline.",
     "entry": "end-of-file-fixer",
     "id": "end-of-file-fixer",
     "language": "python",
-    "name": "Fix End of Files",
+    "name": "fix end of files",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "stages": [
       "commit",
@@ -415,79 +415,82 @@
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmZpbGUtY29udGVudHMtc29ydGVy": {
-    "description": "Sort the lines in specified files (defaults to alphabetical). You must provide list of target files as input in your .pre-commit-config.yaml file.",
+    "description": "sorts the lines in specified files (defaults to alphabetical). you must provide list of target files as input in your .pre-commit-config.yaml file.",
     "entry": "file-contents-sorter",
     "files": "^$",
     "id": "file-contents-sorter",
     "language": "python",
-    "name": "File Contents Sorter",
+    "name": "file contents sorter",
     "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmZpeC1ieXRlLW9yZGVyLW1hcmtlcg": {
-    "description": "removes UTF-8 byte order marker",
+    "description": "removes utf-8 byte order marker.",
     "entry": "fix-byte-order-marker",
     "id": "fix-byte-order-marker",
     "language": "python",
-    "name": "fix UTF-8 byte order marker",
+    "name": "fix utf-8 byte order marker",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "text"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmZpeC1lbmNvZGluZy1wcmFnbWE": {
-    "description": "Add # -*- coding: utf-8 -*- to the top of python files",
+    "description": "adds # -*- coding: utf-8 -*- to the top of python files.",
     "entry": "fix-encoding-pragma",
     "id": "fix-encoding-pragma",
     "language": "python",
-    "name": "Fix python encoding pragma",
+    "name": "fix python encoding pragma",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "python"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLmZvcmJpZC1uZXctc3VibW9kdWxlcw": {
-    "description": "Prevent addition of new git submodules",
+    "description": "prevents addition of new git submodules.",
     "entry": "forbid-new-submodules",
     "id": "forbid-new-submodules",
     "language": "python",
-    "name": "Forbid new submodules",
-    "repo": "https://github.com/pre-commit/pre-commit-hooks"
+    "name": "forbid new submodules",
+    "repo": "https://github.com/pre-commit/pre-commit-hooks",
+    "types": [
+      "directory"
+    ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLnByZXR0eS1mb3JtYXQtanNvbg": {
-    "description": "This hook sets a standard for formatting JSON files.",
+    "description": "sets a standard for formatting json files.",
     "entry": "pretty-format-json",
     "id": "pretty-format-json",
     "language": "python",
-    "name": "Pretty format JSON",
+    "name": "pretty format json",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "types": [
       "json"
     ]
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLnJlcXVpcmVtZW50cy10eHQtZml4ZXI": {
-    "description": "Sorts entries in requirements.txt",
+    "description": "sorts entries in requirements.txt.",
     "entry": "requirements-txt-fixer",
     "files": "requirements.*\\.txt$",
     "id": "requirements-txt-fixer",
     "language": "python",
-    "name": "Fix requirements.txt",
+    "name": "fix requirements.txt",
     "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLnNvcnQtc2ltcGxlLXlhbWw": {
-    "description": "Sorts simple YAML files which consist only of top-level keys, preserving comments and blocks.",
+    "description": "sorts simple yaml files which consist only of top-level keys, preserving comments and blocks.",
     "entry": "sort-simple-yaml",
     "files": "^$",
     "id": "sort-simple-yaml",
     "language": "python",
-    "name": "Sort simple YAML files",
+    "name": "sort simple yaml files",
     "repo": "https://github.com/pre-commit/pre-commit-hooks"
   },
   "cHJlLWNvbW1pdC9wcmUtY29tbWl0LWhvb2tzLnRyYWlsaW5nLXdoaXRlc3BhY2U": {
-    "description": "This hook trims trailing whitespace.",
+    "description": "trims trailing whitespace.",
     "entry": "trailing-whitespace-fixer",
     "id": "trailing-whitespace",
     "language": "python",
-    "name": "Trim Trailing Whitespace",
+    "name": "trim trailing whitespace",
     "repo": "https://github.com/pre-commit/pre-commit-hooks",
     "stages": [
       "commit",

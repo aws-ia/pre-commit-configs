@@ -18,6 +18,7 @@ repos:
       - id: check-vcs-permalinks
       - id: check-xml
       - id: check-yaml
+        exclude: "templates/.*"
 
   - # see https://github.com/antonbabenko/pre-commit-terraform
     repo: https://github.com/antonbabenko/pre-commit-terraform
