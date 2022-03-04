@@ -51,3 +51,6 @@ repos:
     hooks:
       - id: qs-cfn-lint
         files: templates/.*(\.template)?\.(yaml|yml|json)$
+          #        args:
+          #          - "-i=W"
+          #          - "-i=I"

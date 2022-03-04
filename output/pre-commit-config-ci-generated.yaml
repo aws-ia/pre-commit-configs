@@ -34,7 +34,7 @@ repos:
   rev: v1.62.0
 - hooks:
   - args:
-    - --args=f json
+    - -f=json
     files: templates/.*(\.template)?\.(yaml|yml|json)$
     id: qs-cfn-lint
     log_file: /tmp/YXdzLXF1aWNrc3RhcnQvcXMtY2ZuLWxpbnQtcnVsZXMucXMtY2ZuLWxpbnQ.cfnlint

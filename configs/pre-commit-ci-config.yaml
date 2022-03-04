@@ -7,7 +7,7 @@ repo_args:
       meta:
         extension: 'cfnlint'
       args:
-        - '--args=f json'
+        - '-f=json'
   "https://github.com/antonbabenko/pre-commit-terraform":
     terraform_tflint:
       meta:
