@@ -40,6 +40,7 @@ repos:
 
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_tflint
       - id: terraform_tflint
+        exclude: 'examples/.*'
         args:
           - "--args=--config=__GIT_WORKING_DIR__/.tflint.hcl"
 
@@ -51,7 +52,7 @@ repos:
     rev: v1.0
     hooks:
       - id: qs-cfn-lint-wrapped
-        files: templates/.*(\.template)?(\.(yaml|yml|json))?$
+        files: templates/.*(\.(yaml|yml|json|template))
   - repo: https://github.com/aws-ia/pre-commit-hooks
     rev: 3e50b87c2e68f4b1e4c4dce5793120c8c1e7afb5
     hooks:
@@ -61,6 +62,6 @@ repos:
     hooks:
       - id: restricted-filenames
         name: Check commits for unexpected file extensions
-        entry: These file extensions are unusual and should be checked
+        entry: These files are prohibited and should be removed.
         language: fail
         files: '.*\.(taskcat_overrides.yml)'
