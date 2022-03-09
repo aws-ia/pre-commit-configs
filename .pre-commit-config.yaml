@@ -52,8 +52,15 @@ repos:
     hooks:
       - id: qs-cfn-lint-wrapped
         files: templates/.*(\.template)?(\.(yaml|yml|json))?$
-  - repo: https://github.com/andrew-glenn/pre-commit-hooks
+  - repo: https://github.com/aws-ia/pre-commit-hooks
     rev: 3e50b87c2e68f4b1e4c4dce5793120c8c1e7afb5
     hooks:
       - id: git-submodule-sanity-check
         always_run: true
+  - repo: local
+    hooks:
+      - id: restricted-filenames
+        name: Check commits for unexpected file extensions
+        entry: These file extensions are unusual and should be checked
+        language: fail
+        files: '.*\.(taskcat_overrides.yml)'
