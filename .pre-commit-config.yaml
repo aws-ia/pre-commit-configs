@@ -6,7 +6,7 @@ minimum_pre_commit_version: "2.6.0"
 repos:
   -
     repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.1.0
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -40,6 +40,7 @@ repos:
 
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_tflint
       - id: terraform_tflint
+        exclude: 'examples/.*'
         args:
           - "--args=--config=__GIT_WORKING_DIR__/.tflint.hcl"
 
@@ -51,4 +52,16 @@ repos:
     rev: v1.0
     hooks:
       - id: qs-cfn-lint-wrapped
-        files: templates/.*(\.template)?\.(yaml|yml|json)$
+        files: templates/.*(\.(yaml|yml|json|template))
+  - repo: https://github.com/aws-ia/pre-commit-hooks
+    rev: 3e50b87c2e68f4b1e4c4dce5793120c8c1e7afb5
+    hooks:
+      - id: git-submodule-sanity-check
+        always_run: true
+  - repo: local
+    hooks:
+      - id: restricted-filenames
+        name: Check commits for unexpected file extensions
+        entry: These files are prohibited and should be removed.
+        language: fail
+        files: '.*\.(taskcat_overrides.yml)'
