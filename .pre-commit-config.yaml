@@ -6,7 +6,7 @@ minimum_pre_commit_version: "2.6.0"
 repos:
   -
     repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.1.0
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -52,3 +52,8 @@ repos:
     hooks:
       - id: qs-cfn-lint-wrapped
         files: templates/.*(\.template)?(\.(yaml|yml|json))?$
+  - repo: https://github.com/andrew-glenn/pre-commit-hooks
+    rev: 3e50b87c2e68f4b1e4c4dce5793120c8c1e7afb5
+    hooks:
+      - id: git-submodule-sanity-check
+        always_run: true
