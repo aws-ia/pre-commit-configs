@@ -13,7 +13,6 @@ repos:
       - id: check-merge-conflict
       - id: check-executables-have-shebangs
       - id: check-json
-      - id: check-merge-conflict
       - id: check-symlinks
       - id: check-vcs-permalinks
       - id: check-xml
@@ -22,7 +21,7 @@ repos:
 
   - # see https://github.com/antonbabenko/pre-commit-terraform
     repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.62.0
+    rev: v1.64.0
     hooks:
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_fmt
       - id: terraform_fmt
@@ -49,22 +48,25 @@ repos:
           - "--args=--exclude-downloaded-modules"
           - "--args=--custom-check-dir=__GIT_WORKING_DIR__/.tfsec"
   - repo: https://github.com/andrew-glenn/qs-cfn-lint-rules
-    rev: b00348d78241b14bc432b71c75e656bc789aaa37
+    rev: 7b2c31f5dc2b8b4e6b2e8aa878d700e3ca81fa44
     hooks:
       # Inverse flag passed to effectively enforce that CFN templates must be in `templates/`
       - id: files-are-cfn 
-        description: Validating no CFN files exist outside of `templates/`
-        types:
-          - json
-          - yaml
-        excludes: 'templates/*'
+        name: Validating no CFN files exist outside of templates/
+        verbose: true
+        types_or: [json,yaml]
+        require_serial: true
         args:
           - '-i'
+      - id: files-are-cfn
+        name: Validating only CFN files exist in templates/
+        verbose: true
         require_serial: true
+        files: 'templates/.*'
       - id: qs-cfn-lint-wrapped
-        files: templates/.*(\.(yaml|yml|json|template))
+        files: 'templates/.*'
   - repo: https://github.com/aws-ia/pre-commit-hooks
-    rev: 3e50b87c2e68f4b1e4c4dce5793120c8c1e7afb5
+    rev: fed2bf7978aae627d6429103c47b74ba3a1742d9
     hooks:
       - id: git-submodule-sanity-check
         always_run: true
