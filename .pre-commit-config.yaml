@@ -20,8 +20,11 @@ repos:
         exclude: "templates/.*"
 
   - # see https://github.com/antonbabenko/pre-commit-terraform
-    repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.64.0
+    # Temporary, pending approval/merge of https://github.com/antonbabenko/pre-commit-terraform/pull/347
+    # repo: https://github.com/antonbabenko/pre-commit-terraform
+    # rev: v1.64.0
+    repo: https://github.com/aws-ia/pre-commit-terraform
+    rev: ddca11bc1aca44812c79ce1f0c0251eadf87237f
     hooks:
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_fmt
       - id: terraform_fmt
