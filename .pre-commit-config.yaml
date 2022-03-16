@@ -51,6 +51,8 @@ repos:
         args:
           - "--args=--exclude-downloaded-modules"
           - "--args=--custom-check-dir=__GIT_WORKING_DIR__/.tfsec"
+        files: \.tf$
+        exclude: \.terraform\/.*$
   - repo: https://github.com/aws-quickstart/qs-cfn-lint-rules
     rev: v1.1
     hooks:
