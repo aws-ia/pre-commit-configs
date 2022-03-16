@@ -24,7 +24,7 @@ repos:
     # repo: https://github.com/antonbabenko/pre-commit-terraform
     # rev: v1.64.0
     repo: https://github.com/aws-ia/pre-commit-terraform
-    rev: c2f7d1891eb6db6d88644ec11a4f5f245284b888
+    rev: 76914e65fafa5ccb6e10a43d821b8543507ed234
     hooks:
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_fmt
       - id: terraform_fmt
