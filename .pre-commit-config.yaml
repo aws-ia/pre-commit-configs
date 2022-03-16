@@ -24,13 +24,14 @@ repos:
     # repo: https://github.com/antonbabenko/pre-commit-terraform
     # rev: v1.64.0
     repo: https://github.com/aws-ia/pre-commit-terraform
-    rev: ddca11bc1aca44812c79ce1f0c0251eadf87237f
+    rev: c2f7d1891eb6db6d88644ec11a4f5f245284b888
     hooks:
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_fmt
       - id: terraform_fmt
 
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_validate
       - id: terraform_validate
+        exclude: examples/.*
 
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_docs
       - id: terraform_docs
@@ -51,7 +52,7 @@ repos:
           - "--args=--exclude-downloaded-modules"
           - "--args=--custom-check-dir=__GIT_WORKING_DIR__/.tfsec"
   - repo: https://github.com/andrew-glenn/qs-cfn-lint-rules
-    rev: 7b2c31f5dc2b8b4e6b2e8aa878d700e3ca81fa44
+    rev: 76ad051a41f186f37d446a20b59f12f97ff06e5e
     hooks:
       # Inverse flag passed to effectively enforce that CFN templates must be in `templates/`
       - id: files-are-cfn 
