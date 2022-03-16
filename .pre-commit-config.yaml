@@ -13,7 +13,6 @@ repos:
       - id: check-merge-conflict
       - id: check-executables-have-shebangs
       - id: check-json
-      - id: check-merge-conflict
       - id: check-symlinks
       - id: check-vcs-permalinks
       - id: check-xml
@@ -21,14 +20,18 @@ repos:
         exclude: "templates/.*"
 
   - # see https://github.com/antonbabenko/pre-commit-terraform
-    repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.62.0
+    # Temporary, pending approval/merge of https://github.com/antonbabenko/pre-commit-terraform/pull/347
+    # repo: https://github.com/antonbabenko/pre-commit-terraform
+    # rev: v1.64.0
+    repo: https://github.com/aws-ia/pre-commit-terraform
+    rev: 76914e65fafa5ccb6e10a43d821b8543507ed234
     hooks:
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_fmt
       - id: terraform_fmt
 
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_validate
       - id: terraform_validate
+        exclude: examples/.*
 
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_docs
       - id: terraform_docs
@@ -48,13 +51,28 @@ repos:
         args:
           - "--args=--exclude-downloaded-modules"
           - "--args=--custom-check-dir=__GIT_WORKING_DIR__/.tfsec"
+        files: \.tf$
+        exclude: \.terraform\/.*$
   - repo: https://github.com/aws-quickstart/qs-cfn-lint-rules
-    rev: v1.0
+    rev: v1.1
     hooks:
+      # Inverse flag passed to effectively enforce that CFN templates must be in `templates/`
+      - id: files-are-not-cfn 
+        name: Validating no CFN files exist outside of templates/
+        verbose: true
+        types_or: [json,yaml]
+        require_serial: true
+        args:
+          - '-i'
+      - id: files-are-cfn
+        name: Validating only CFN files exist in templates/
+        verbose: true
+        require_serial: true
+        files: 'templates/.*'
       - id: qs-cfn-lint-wrapped
-        files: templates/.*(\.(yaml|yml|json|template))
+        files: 'templates/.*'
   - repo: https://github.com/aws-ia/pre-commit-hooks
-    rev: 3e50b87c2e68f4b1e4c4dce5793120c8c1e7afb5
+    rev: fed2bf7978aae627d6429103c47b74ba3a1742d9
     hooks:
       - id: git-submodule-sanity-check
         always_run: true
