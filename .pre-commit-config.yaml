@@ -51,8 +51,8 @@ repos:
         args:
           - "--args=--exclude-downloaded-modules"
           - "--args=--custom-check-dir=__GIT_WORKING_DIR__/.tfsec"
-  - repo: https://github.com/andrew-glenn/qs-cfn-lint-rules
-    rev: 76ad051a41f186f37d446a20b59f12f97ff06e5e
+  - repo: https://github.com/aws-quickstart/qs-cfn-lint-rules
+    rev: v1.1
     hooks:
       # Inverse flag passed to effectively enforce that CFN templates must be in `templates/`
       - id: files-are-cfn 
