@@ -57,7 +57,7 @@ repos:
     rev: v1.1
     hooks:
       # Inverse flag passed to effectively enforce that CFN templates must be in `templates/`
-      - id: files-are-cfn 
+      - id: files-are-not-cfn 
         name: Validating no CFN files exist outside of templates/
         verbose: true
         types_or: [json,yaml]
