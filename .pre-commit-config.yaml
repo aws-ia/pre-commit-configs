@@ -6,7 +6,9 @@ minimum_pre_commit_version: "2.6.0"
 repos:
   -
     repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
+    # To update the frozen revs, run:  pre-commit autoupdate --freeze
+    # see: https://pre-commit.com/#pre-commit-autoupdate for more details.
+    rev: 8fe62d14e0b4d7d845a7022c5c2c3ae41bdd3f26  # frozen: v4.1.0
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -54,7 +56,7 @@ repos:
         files: \.tf$
         exclude: \.terraform\/.*$
   - repo: https://github.com/aws-quickstart/qs-cfn-lint-rules
-    rev: v1.1
+    rev: 195c1c9825b1b911b2384e45c6cd18af14e7307d  # frozen: v1.1
     hooks:
       # Inverse flag passed to effectively enforce that CFN templates must be in `templates/`
       - id: files-are-not-cfn 
@@ -72,7 +74,7 @@ repos:
       - id: qs-cfn-lint-wrapped
         files: 'templates/.*'
   - repo: https://github.com/aws-ia/pre-commit-hooks
-    rev: fed2bf7978aae627d6429103c47b74ba3a1742d9
+    rev: 16be3ef859223383f402c8523bfd3bbb5f750894
     hooks:
       - id: git-submodule-sanity-check
         always_run: true
