@@ -6,7 +6,7 @@ minimum_pre_commit_version: "2.6.0"
 repos:
   -
     repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
+    rev: 8fe62d14e0b4d7d845a7022c5c2c3ae41bdd3f26  # frozen: v4.1.0
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -24,7 +24,7 @@ repos:
     # repo: https://github.com/antonbabenko/pre-commit-terraform
     # rev: v1.64.0
     repo: https://github.com/aws-ia/pre-commit-terraform
-    rev: 76914e65fafa5ccb6e10a43d821b8543507ed234
+    rev: c3fb6c23f30a7951bd2eee6a756a6696824e5e53  # frozen: v1.65.0.pre1
     hooks:
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_fmt
       - id: terraform_fmt
@@ -37,6 +37,7 @@ repos:
       - id: terraform_docs
         args:
           - "--args=--config=.terraform-docs.yaml"
+          - "--args=--lockfile=false"
 
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_providers_lock
       - id: terraform_providers_lock
@@ -54,7 +55,7 @@ repos:
         files: \.tf$
         exclude: \.terraform\/.*$
   - repo: https://github.com/aws-quickstart/qs-cfn-lint-rules
-    rev: v1.1
+    rev: 195c1c9825b1b911b2384e45c6cd18af14e7307d  # frozen: v1.1
     hooks:
       # Inverse flag passed to effectively enforce that CFN templates must be in `templates/`
       - id: files-are-not-cfn 
@@ -64,6 +65,7 @@ repos:
         require_serial: true
         args:
           - '-i'
+        exclude: 'templates/.*'
       - id: files-are-cfn
         name: Validating only CFN files exist in templates/
         verbose: true
@@ -72,7 +74,7 @@ repos:
       - id: qs-cfn-lint-wrapped
         files: 'templates/.*'
   - repo: https://github.com/aws-ia/pre-commit-hooks
-    rev: fed2bf7978aae627d6429103c47b74ba3a1742d9
+    rev: 16be3ef859223383f402c8523bfd3bbb5f750894  # frozen: v1.0
     hooks:
       - id: git-submodule-sanity-check
         always_run: true
