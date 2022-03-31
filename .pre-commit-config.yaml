@@ -24,7 +24,7 @@ repos:
     # repo: https://github.com/antonbabenko/pre-commit-terraform
     # rev: v1.64.0
     repo: https://github.com/aws-ia/pre-commit-terraform
-    rev: 76914e65fafa5ccb6e10a43d821b8543507ed234  # frozen: v1.65.0.pre0
+    rev: c3fb6c23f30a7951bd2eee6a756a6696824e5e53  # frozen: v1.65.0.pre1
     hooks:
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_fmt
       - id: terraform_fmt
@@ -74,7 +74,7 @@ repos:
       - id: qs-cfn-lint-wrapped
         files: 'templates/.*'
   - repo: https://github.com/aws-ia/pre-commit-hooks
-    rev: 16be3ef859223383f402c8523bfd3bbb5f750894
+    rev: 16be3ef859223383f402c8523bfd3bbb5f750894  # frozen: v1.0
     hooks:
       - id: git-submodule-sanity-check
         always_run: true
