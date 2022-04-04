@@ -1,0 +1,51 @@
+---
+
+fail_fast: false
+minimum_pre_commit_version: "2.6.0"
+
+repos:
+  -
+    repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 8fe62d14e0b4d7d845a7022c5c2c3ae41bdd3f26  # frozen: v4.1.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-symlinks
+      - id: check-vcs-permalinks
+      - id: check-xml
+      - id: check-yaml
+        exclude: "templates/.*"
+
+  - repo: https://github.com/aws-quickstart/qs-cfn-lint-rules
+    rev: 195c1c9825b1b911b2384e45c6cd18af14e7307d  # frozen: v1.1
+    hooks:
+      # Inverse flag passed to effectively enforce that CFN templates must be in `templates/`
+      - id: files-are-not-cfn 
+        name: Validating no CFN files exist outside of templates/
+        verbose: true
+        types_or: [json,yaml]
+        require_serial: true
+        args:
+          - '-i'
+      - id: files-are-cfn
+        name: Validating only CFN files exist in templates/
+        verbose: true
+        require_serial: true
+        files: 'templates/.*'
+      - id: qs-cfn-lint-wrapped
+        files: 'templates/.*'
+  - repo: https://github.com/aws-ia/pre-commit-hooks
+    rev: 16be3ef859223383f402c8523bfd3bbb5f750894
+    hooks:
+      - id: git-submodule-sanity-check
+        always_run: true
+  - repo: local
+    hooks:
+      - id: restricted-filenames
+        name: Check commits for unexpected file extensions
+        entry: These files are prohibited and should be removed.
+        language: fail
+        files: '.*\.(taskcat_overrides.yml)'
