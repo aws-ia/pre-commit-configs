@@ -9,7 +9,7 @@
 - id: aws-ia-highpoint-hook
   name: Highpoint hook wrapper
   require_serial: true
-  entry: hooks/highpoint-hook-wrapper.sh
+  entry: specific/hooks/highpoint-hook-wrapper.sh
   language: script
   always_run: true
   verbose: true
