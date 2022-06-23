@@ -17,6 +17,9 @@ repos:
       - id: check-vcs-permalinks
       - id: check-xml
       - id: check-yaml
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+      #- id: flake8
         exclude: "templates/.*"
 
   - # see https://github.com/antonbabenko/pre-commit-terraform
@@ -58,7 +61,7 @@ repos:
     rev: 195c1c9825b1b911b2384e45c6cd18af14e7307d  # frozen: v1.1
     hooks:
       # Inverse flag passed to effectively enforce that CFN templates must be in `templates/`
-      - id: files-are-not-cfn 
+      - id: files-are-not-cfn
         name: Validating no CFN files exist outside of templates/
         verbose: true
         types_or: [json,yaml]
@@ -85,3 +88,8 @@ repos:
         entry: These files are prohibited and should be removed.
         language: fail
         files: '.*\.(taskcat_overrides.yml)'
+  - repo: https://github.com/PyCQA/bandit
+    rev: v1.7.4
+    hooks:
+      - id: bandit
+        description: 'Bandit is a tool for finding common security issues in Python code'
