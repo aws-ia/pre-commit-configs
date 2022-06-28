@@ -17,10 +17,10 @@ repos:
       - id: check-vcs-permalinks
       - id: check-xml
       - id: check-yaml
+        exclude: "templates/.*"
       - id: mixed-line-ending
       - id: trailing-whitespace
       #- id: flake8
-        exclude: "templates/.*"
 
   - # see https://github.com/antonbabenko/pre-commit-terraform
     # Temporary, pending approval/merge of https://github.com/antonbabenko/pre-commit-terraform/pull/347
