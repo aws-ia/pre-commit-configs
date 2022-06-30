@@ -19,7 +19,7 @@ repos:
       - id: check-yaml
         exclude: "templates/.*"
       - id: mixed-line-ending
-      - id: trailing-whitespace
+      #      - id: trailing-whitespace
       #- id: flake8
 
   - # see https://github.com/antonbabenko/pre-commit-terraform
