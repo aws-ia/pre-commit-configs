@@ -17,6 +17,7 @@ repos:
       - id: check-vcs-permalinks
       - id: check-xml
       - id: check-yaml
+        args: [--allow-multiple-documents]
         exclude: "templates/.*"
       - id: mixed-line-ending
       #      - id: trailing-whitespace
