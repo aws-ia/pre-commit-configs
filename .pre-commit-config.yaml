@@ -69,14 +69,14 @@ repos:
         require_serial: true
         args:
           - '-i'
-        exclude: 'templates/.*'
+        exclude: '^templates/.*'
       - id: files-are-cfn
         name: Validating only CFN files exist in templates/
         verbose: true
         require_serial: true
-        files: 'templates/.*'
+        files: '^templates/.*'
       - id: qs-cfn-lint-wrapped
-        files: 'templates/.*'
+        files: '^templates/.*'
   - repo: https://github.com/aws-ia/pre-commit-hooks
     rev: 16be3ef859223383f402c8523bfd3bbb5f750894  # frozen: v1.0
     hooks:
