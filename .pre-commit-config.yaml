@@ -24,9 +24,6 @@ repos:
       #- id: flake8
 
   - # see https://github.com/antonbabenko/pre-commit-terraform
-    # Temporary, pending approval/merge of https://github.com/antonbabenko/pre-commit-terraform/pull/347
-    # repo: https://github.com/antonbabenko/pre-commit-terraform
-    # rev: v1.64.0
     repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: f5aa7c83b61c6a2838b1ee67f5c706623fe015cc  # frozen: v1.75.0
     hooks:
