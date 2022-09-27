@@ -23,8 +23,7 @@ repos:
       #      - id: trailing-whitespace
       #- id: flake8
 
-  - # see https://github.com/antonbabenko/pre-commit-terraform
-    repo: https://github.com/antonbabenko/pre-commit-terraform
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: f5aa7c83b61c6a2838b1ee67f5c706623fe015cc  # frozen: v1.75.0
     hooks:
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_fmt
@@ -56,7 +55,7 @@ repos:
         files: \.tf$
         exclude: \.terraform\/.*$
   - repo: https://github.com/aws-quickstart/qs-cfn-lint-rules
-    rev: 9863c789783a9f86f65d4083d9d1ac8992b83843  # frozen: v1.2
+    rev: 93a9fc75ed3d7ede082b8afad4cdd97e4794cee0  # frozen: v1.4
     hooks:
       # Inverse flag passed to effectively enforce that CFN templates must be in `templates/`
       - id: files-are-not-cfn
