@@ -55,7 +55,7 @@ repos:
         files: \.tf$
         exclude: \.terraform\/.*$
   - repo: https://github.com/aws-quickstart/qs-cfn-lint-rules
-    rev: a3f97e8bd77804cf008cbd91103371cd0c841c77  # frozen: v1.3
+    rev: 93a9fc75ed3d7ede082b8afad4cdd97e4794cee0  # frozen: v1.4
     hooks:
       # Inverse flag passed to effectively enforce that CFN templates must be in `templates/`
       - id: files-are-not-cfn
