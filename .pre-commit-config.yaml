@@ -24,7 +24,7 @@ repos:
       #- id: flake8
 
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: f5aa7c83b61c6a2838b1ee67f5c706623fe015cc  # frozen: v1.75.0
+    rev: 1d54ea2b9950097568c6a7a2e2bcb6d4b4ebfb61  # frozen: v1.77.0
     hooks:
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_fmt
       - id: terraform_fmt
