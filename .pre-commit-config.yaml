@@ -6,7 +6,7 @@ minimum_pre_commit_version: "2.6.0"
 repos:
   -
     repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: 3298ddab3c13dd77d6ce1fc0baf97691430d84b0  # frozen: v4.3.0
+    rev: f71fa2c1f9cf5cb705f73dffe4b21f7c61470ba9  # frozen: v4.4.0
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -24,7 +24,7 @@ repos:
       #- id: flake8
 
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: 1d54ea2b9950097568c6a7a2e2bcb6d4b4ebfb61  # frozen: v1.77.0
+    rev: 3420134c37197c21edffc7e6093b14ffae8402f2  # frozen: v1.81.0
     hooks:
       # see https://github.com/antonbabenko/pre-commit-terraform#terraform_fmt
       - id: terraform_fmt
@@ -55,7 +55,7 @@ repos:
         files: \.tf$
         exclude: \.terraform\/.*$
   - repo: https://github.com/aws-quickstart/qs-cfn-lint-rules
-    rev: 93a9fc75ed3d7ede082b8afad4cdd97e4794cee0  # frozen: v1.4
+    rev: f327b3cbf6bafd99d626d6b0ffae882823395c75  # frozen: v1.5
     hooks:
       # Inverse flag passed to effectively enforce that CFN templates must be in `templates/`
       - id: files-are-not-cfn
@@ -86,7 +86,7 @@ repos:
         language: fail
         files: '.*\.(taskcat_overrides.yml)'
   - repo: https://github.com/PyCQA/bandit
-    rev: 1ed79063e3672a1c6d91ee27cb648e07a7465344  # frozen: 1.7.4
+    rev: ca4faf2f82a7c68a088100f8ba2b8e56f9bdcfe3  # frozen: 1.7.5
     hooks:
       - id: bandit
         description: 'Bandit is a tool for finding common security issues in Python code'
